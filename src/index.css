@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2e2a5b;
+  --color-background-light: #fefce8;
+  --color-background-dark: #0f172a;
+  --color-card-light: #ffffff;
+  --color-card-dark: #1e293b;
+  --font-family-display: "Nunito", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-family-body);
+}
+
+.font-display {
+  font-family: var(--font-family-display) !important;
+}
+
+.font-body {
+  font-family: var(--font-family-body) !important;
+}
+
+/* Floating animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Flip Card */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
