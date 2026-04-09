@@ -1,7 +1,7 @@
 // Front: your cartoon avatar. Replace with: /images/avatar-cartoon.png (or .jpg)
 // Back: your personal photo. Replace with: /images/avatar-photo.jpg
 const CARTOON_SRC = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAQUPWtUY5iRJNu1JyYU-klH2wMZOs61mcPCWW1vstgxmvk3aP5MOcpqP7Ze21tEonoug5VfLU6US4XetmHPVMUjHB3cvQeyfADAIrvFuFKYUStyrpVxlrlVHDookV4ZjMmzw6k6__0qeHJ8UXGDZxcFZ2KrToXU_Sjn5oWvXrzCJf5wD4p3ya-qIeLE25CinoaG7PBAH9zJ0ZuYUOZkyJ0Rv7YkkLy2CWjRawzXrI9eXmTF4vaZdGNMEilPOSSYI9p6BU5tdohXiY'
-const PHOTO_SRC = '/images/avatar-cartoon.svg' // TODO: replace with your personal photo
+const PHOTO_SRC = '/images/profile-picture.jpg'
 
 export default function FlipCard() {
     return (

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import FlipCard from '../components/FlipCard'
 
@@ -12,19 +12,54 @@ function Star({ className }) {
 }
 
 export default function Home() {
-    // Mouse parallax for "Yeah!" sticker
+    // "Yeah!" sticker follows mouse with trailing (lerp) effect
+    const mouse = useRef({ x: 0, y: 0 })
+    const pos = useRef({ x: 0, y: 0 })
+    const visible = useRef(false)
+    const rafId = useRef(null)
+
     useEffect(() => {
         const sticker = document.getElementById('yeah-sticker')
+        if (!sticker) return
+
         const handleMouseMove = (e) => {
-            if (!sticker) return
-            const cx = window.innerWidth / 2
-            const cy = window.innerHeight / 2
-            const mx = (e.clientX - cx) * 0.05
-            const my = (e.clientY - cy) * 0.05
-            sticker.style.transform = `translate(calc(-50% + ${mx}px), calc(-50% + ${my}px)) rotate(-12deg)`
+            mouse.current.x = e.clientX
+            mouse.current.y = e.clientY
+            if (!visible.current) {
+                visible.current = true
+                pos.current.x = e.clientX
+                pos.current.y = e.clientY
+                sticker.style.opacity = '1'
+            }
         }
+
+        const ease = 0.1 // lower = more trailing lag
+        const tick = () => {
+            pos.current.x += (mouse.current.x - pos.current.x) * ease
+            pos.current.y += (mouse.current.y - pos.current.y) * ease
+
+            // Calculate angle from movement direction
+            const dx = mouse.current.x - pos.current.x
+            const dy = mouse.current.y - pos.current.y
+            const angle = Math.atan2(dy, dx) * (180 / Math.PI)
+            const speed = Math.sqrt(dx * dx + dy * dy)
+            // Tilt slightly in the movement direction, max ±15deg
+            const tilt = Math.min(speed, 15) * (Math.sign(dx) || 1) * 0.8
+
+            sticker.style.left = `${pos.current.x}px`
+            sticker.style.top = `${pos.current.y}px`
+            sticker.style.transform = `translate(-50%, -50%) rotate(${tilt}deg)`
+
+            rafId.current = requestAnimationFrame(tick)
+        }
+
         window.addEventListener('mousemove', handleMouseMove)
-        return () => window.removeEventListener('mousemove', handleMouseMove)
+        rafId.current = requestAnimationFrame(tick)
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove)
+            cancelAnimationFrame(rafId.current)
+        }
     }, [])
 
     return (
@@ -56,7 +91,7 @@ export default function Home() {
                 <div className="lg:col-span-4 text-center lg:text-left order-2 lg:order-1 relative">
                     <h2 className="font-display font-bold text-4xl lg:text-6xl text-slate-800 dark:text-white leading-tight mb-4">
                         Hi, I&apos;m <br />
-                        <span className="text-primary">[Your Name]</span>
+                        <span className="text-primary">Cheryl Li</span>
                     </h2>
                     <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6">
                         Crafting delightful experiences, one pixel at a time. I bridge the gap between user needs and business goals.
@@ -94,14 +129,14 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* "Yeah!" sticker with parallax */}
+            {/* "Yeah!" sticker follows cursor with trailing effect */}
             <div
                 id="yeah-sticker"
-                className="fixed top-1/2 left-1/2 z-20 pointer-events-none hidden lg:block transition-transform duration-100 ease-out"
-                style={{ transform: 'translate(-50%, -50%) rotate(-12deg)' }}
+                className="fixed z-20 pointer-events-none hidden lg:block"
+                style={{ opacity: 0, top: 0, left: 0, transform: 'translate(-50%, -50%)' }}
             >
-                <div className="bg-red-100 dark:bg-red-900/50 text-red-500 dark:text-red-300 font-display font-black text-2xl px-4 py-2 rounded-lg shadow-sm border-2 border-red-200 dark:border-red-800 opacity-80 backdrop-blur-sm">
-                    🛒 Yeah!
+                <div className="text-red-500 dark:text-red-300 font-display font-black text-xs px-4 py-2">
+                    Yeah!
                 </div>
             </div>
         </main>

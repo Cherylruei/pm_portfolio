@@ -7,7 +7,7 @@ export default function Footer() {
                 </p>
                 <div className="flex space-x-4">
                     <a
-                        href="https://linkedin.com"
+                        href="https://www.linkedin.com/in/cheryl-li-75500b165/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-slate-400 hover:text-primary dark:hover:text-white transition-colors"
@@ -18,7 +18,7 @@ export default function Footer() {
                         </svg>
                     </a>
                     <a
-                        href="mailto:hello@example.com"
+                        href="mailto:cherylrueichun@gmail.com"
                         className="text-slate-400 hover:text-primary dark:hover:text-white transition-colors"
                         aria-label="Email"
                     >
