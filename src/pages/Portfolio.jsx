@@ -1,8 +1,10 @@
 import FlipCard from '../components/FlipCard'
 import ProjectCard from '../components/ProjectCard'
-import projects from '../data/projects.json'
+import { useProjects } from '../hooks/useProjects'
 
 export default function Portfolio() {
+    const { projects, loading } = useProjects()
+
     return (
         <main className="container mx-auto px-6 py-12 relative">
             {/* Dark mode toggle */}
@@ -46,7 +48,7 @@ export default function Portfolio() {
                                 </div>
                                 <div className="flex justify-between">
                                     <span className="text-slate-500 dark:text-slate-400 text-sm">Years exp.</span>
-                                    <span className="font-bold text-primary">3+</span>
+                                    <span className="font-bold text-primary">7+</span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span className="text-slate-500 dark:text-slate-400 text-sm">Users impacted</span>
@@ -61,13 +63,26 @@ export default function Portfolio() {
             {/* Projects grid */}
             <section className="relative">
                 <h3 className="font-display font-bold text-2xl text-slate-800 dark:text-white mb-8 text-center lg:text-left">
-                    Featured Projects
+                    All Projects
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
-                    {projects.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
-                    ))}
-                </div>
+                {loading ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[1, 2].map((n) => (
+                            <div key={n} className="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-lg animate-pulse">
+                                <div className="bg-slate-200 dark:bg-slate-700 rounded-2xl h-48 mb-6" />
+                                <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded mb-3 w-1/3" />
+                                <div className="h-6 bg-slate-200 dark:bg-slate-700 rounded mb-2 w-2/3" />
+                                <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-full" />
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                        {projects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </div>
+                )}
             </section>
         </main>
     )

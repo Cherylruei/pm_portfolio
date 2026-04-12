@@ -1,16 +1,76 @@
-# React + Vite
+# Cheryl Li — PM Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> AI Product Manager portfolio site.  
+> Live: https://pm-portfolio-gamma.vercel.app  
+> Repo: https://github.com/Cherylruei/pm_portfolio
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 + Vite 7
+- Tailwind CSS 4
+- react-router-dom 7
+- Vercel (hosting + serverless functions)
+- Notion API (CMS for projects)
 
-## React Compiler
+## Local Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project uses Vercel Serverless Functions under `/api`. Use `vercel dev` instead of `npm run dev` to run both the frontend and API together locally.
 
-## Expanding the ESLint configuration
+```bash
+# Install Vercel CLI (once)
+npm install -g vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Link to Vercel project (once)
+vercel link
+
+# Set up environment variables
+cp .env.example .env
+# Fill in NOTION_API_KEY and NOTION_PROJECTS_DB_ID in .env
+
+# Start local dev server (frontend + /api)
+vercel dev
+```
+
+> **Note:** Without a valid `.env`, the app falls back to `src/data/projects.json` automatically.
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NOTION_API_KEY` | Internal Integration Secret from notion.so/my-integrations |
+| `NOTION_PROJECTS_DB_ID` | 32-character ID from your Notion database URL |
+
+See `.env.example` for the format.
+
+## Project Structure
+
+```
+pm_portfolio/
+├── api/
+│   └── projects.js        # GET /api/projects → Notion Projects DB
+├── src/
+│   ├── components/
+│   │   ├── FlipCard.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Navbar.jsx
+│   │   └── ProjectCard.jsx
+│   ├── hooks/
+│   │   └── useProjects.js  # Fetches /api/projects with JSON fallback
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── ProjectDetail.jsx
+│   │   └── About.jsx
+│   └── data/
+│       └── projects.json   # Fallback data (used when API unavailable)
+├── public/
+│   └── cv.pdf
+├── .env.example
+└── vercel.json
+```
+
+## Build
+
+```bash
+npm run build
+```

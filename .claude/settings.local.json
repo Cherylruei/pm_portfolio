@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(ls c:/Users/heave/pm_portfolio/.env*)",
+      "Bash(node -e ':*)",
+      "Bash(curl -s http://localhost:3000/api/projects)",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\);process.stdin.on\\('end',\\(\\)=>{try{const j=JSON.parse\\(d\\);console.log\\('projects count:',j.projects?.length,'first title:',j.projects?.[0]?.title\\)}catch\\(e\\){console.log\\('raw:',d.slice\\(0,200\\)\\)}}\\)\")"
+    ]
+  }
+}

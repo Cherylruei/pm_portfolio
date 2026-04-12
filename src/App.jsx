@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import ProjectDetail from './pages/ProjectDetail'
+import About from './pages/About'
 import './index.css'
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:id" element={<ProjectDetail />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>

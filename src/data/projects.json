@@ -1,88 +1,48 @@
 [
-    {
-        "id": "eshop-rwd",
-        "tag": "Launched!",
-        "tagColor": "pink",
-        "title": "eShop RWD System",
-        "description": "Mobile-first e-commerce revamp",
-        "demoUrl": "https://example.com/eshop-demo",
-        "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuB9gdVprK5wWVNWvO6ur8aDQGKS5zZYIEoWtqZaYRwSIhjYDy7zEH9KhExOBLNowh-eqG1MKjeHrrKyCV4M1I5Se0g1RnNBfDTIZZmleP-t4gBkHUjaDdfJdBPZJqastBBu6vrYH2UL1EKZqC8SgxUdYC-i1IDgU2co1khFD3sLmDOM_iYybZIWrvi5j3L3bBE5cxB2YN1B8x1CWil4X8WOLllcROTh2x7emQH_Az37JpanOwJG9rktB1wAgt7b52O5wnPm2znqo00",
-        "detail": {
-            "overview": "A full redesign of the eShop platform using a mobile-first approach, improving conversion rates through better UX patterns and responsive layouts.",
-            "role": "Product Manager",
-            "tools": [
-                "Figma",
-                "JIRA",
-                "Google Analytics"
-            ],
-            "outcome": "Increased mobile conversion rate by 23% within 3 months of launch.",
-            "problem": "Users were experiencing high drop-off rates on mobile devices due to a non-responsive legacy design.",
-            "process": "Conducted user research, created wireframes, collaborated with engineering on implementation, and ran A/B tests to validate improvements."
-        }
-    },
-    {
-        "id": "n8n-gmail-automation",
-        "tag": "Efficiency!",
-        "tagColor": "emerald",
-        "title": "n8n Gmail Automation",
-        "description": "Workflow optimization for teams",
-        "demoUrl": "https://example.com/n8n-demo",
-        "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuBrpUe-XW91x2Dkc8AQtQU-k--JZvAgFyOXnKWoDoikbbMQ8GZ9XJjYsPcGpxN-aXpPWCNrtFt243hQOSGLT4bWt0nmo_BHgZm_rmtlyQ190eye_fEbpcbh4y8fPB_iXisSYfQfmYh62KTwSQAblqM7veuDC2b2Equ0fvnVML3k34rk-HCGjITjAbfDlfBvEw5YE4rt6wRXI7AtVmql-CQ0r_7Z3AlJW_BgS3Tn13yglXExM0rNkMRHhC2Qxe7HQrqziY-RExrdNfY",
-        "detail": {
-            "overview": "Built an automated workflow using n8n to handle Gmail-based team notifications, reducing manual effort and improving response times.",
-            "role": "Product Manager / No-Code Developer",
-            "tools": [
-                "n8n",
-                "Gmail API",
-                "Slack"
-            ],
-            "outcome": "Saved the team 5+ hours per week on manual email processing.",
-            "problem": "The team was manually triaging and forwarding emails, leading to missed messages and slow response times.",
-            "process": "Mapped existing email workflows, designed automation logic in n8n, integrated with Slack for notifications, and trained the team on the new system."
-        }
-    },
-    {
-        "id": "104-job-seeker-revamp",
-        "tag": "User Focus",
-        "tagColor": "blue",
-        "title": "104 Job Seeker Revamp",
-        "description": "UX research & interface redesign",
-        "demoUrl": "https://example.com/104-demo",
-        "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuC-ZzBKvmQlH7lJ16R52jIdvafEx_1MyKwiB_15A4LWEmMsQOh0p1olvp3Dl0uwrvLnMDFx8T9sMR5VRxkBbfSkR_d44GLQOC_0tXPVq_HPRhTJ3SWIn4TMJeko5RRCDteBOcy2AK8q4aQGm0QVxQQajQ-ZtHaGgbxZANR0o_jupsKyPZNA0zmrMs9qNR5thGVD7qXknMZRlNxFraH8CHq3YQtb3P3ooF7vLBaujSxVvx52zCfCOJ7aAJhsvuhwS4AHrBM-WHmxAaI",
-        "detail": {
-            "overview": "Led a comprehensive UX research and redesign initiative for the 104 job seeker platform, focused on improving search discoverability and application flow.",
-            "role": "Product Manager",
-            "tools": [
-                "Figma",
-                "UserTesting.com",
-                "Hotjar",
-                "Mixpanel"
-            ],
-            "outcome": "Improved job application completion rate by 18% and reduced average time-to-apply by 40%.",
-            "problem": "Job seekers struggled to find relevant jobs quickly, and the application process had too many friction points.",
-            "process": "Ran user interviews, analyzed funnel drop-off data, prototyped new search & filter patterns, and piloted with a subset of users before full rollout."
-        }
-    },
-    {
-        "id": "boostime-ux-audit",
-        "tag": "Brand Love",
-        "tagColor": "orange",
-        "title": "Boostime UX Audit",
-        "description": "Comprehensive usability analysis",
-        "demoUrl": "https://example.com/boostime-demo",
-        "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuAtUvKQtXl43eClO8dCSgR8l3M1uaTVln7W90i9h470DJUnSVMkSzpVs_blx3lPrhaMwLKRgjtJeS42pY5EFIogLFE1Yz9Asm65F8lwO608ZPSWtiVYsO-ygciaVcLFcZxg5goVOE5juGzt-zgf5lZNO5lOS0UkjrAtDOtLH1i9RkN3avTAGrFjVkrXvRJKOCNH0dvOaahqaDWM95m9_GCHewMPS7ZBM0DZHjI7YPmBwsflxuOT-iIYu6bvb0BXIX1T4nxNhRs8tko",
-        "detail": {
-            "overview": "Conducted a full UX audit of the Boostime SaaS platform, identifying critical usability issues and providing prioritized recommendations for the product roadmap.",
-            "role": "Product Manager / UX Consultant",
-            "tools": [
-                "Figma",
-                "Notion",
-                "Loom",
-                "Maze"
-            ],
-            "outcome": "Delivered a 40-page audit report with 25 actionable recommendations; 12 were implemented in the next sprint.",
-            "problem": "Users were churning after onboarding due to confusing navigation and unclear feature discovery.",
-            "process": "Performed heuristic evaluation, ran usability tests with 8 participants, analyzed session recordings, and presented findings to stakeholders."
-        }
+  {
+    "id": "104-ai-career-coach",
+    "tags": ["AI", "PRD", "LLM"],
+    "tagColor": "blue",
+    "title": "104 AI Career Coach",
+    "role": "AI Product Manager",
+    "summary": "Redesigned 104's career Q&A into a context-adaptive AI coach that reads where users are in their career journey before giving advice.",
+    "period": "2024 Q3–Q4",
+    "demoUrl": null,
+    "caseStudyUrl": null,
+    "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuC-ZzBKvmQlH7lJ16R52jIdvafEx_1MyKwiB_15A4LWEmMsQOh0p1olvp3Dl0uwrvLnMDFx8T9sMR5VRxkBbfSkR_d44GLQOC_0tXPVq_HPRhTJ3SWIn4TMJeko5RRCDteBOcy2AK8q4aQGm0QVxQQajQ-ZtHaGgbxZANR0o_jupsKyPZNA0zmrMs9qNR5thGVD7qXknMZRlNxFraH8CHq3YQtb3P3ooF7vLBaujSxVvx52zCfCOJ7aAJhsvuhwS4AHrBM-WHmxAaI",
+    "featured": true,
+    "detail": {
+      "overview": "Designed an AI career coaching feature for 104 (Taiwan's largest job platform, 10M+ users), going through a failed V1 POC and a successful V2 redesign.",
+      "highlights": ["70+ page PRD", "3 career scenarios", "V2 passed POC"],
+      "problem": "Job seekers at career turning points lacked real-time, personalized guidance. The existing Q&A format couldn't read the user's career context.",
+      "process": "V1 integrated AI into the Q&A format—POC failed because users didn't know what to ask. Went back to user interviews, redefined the problem. V2 shifted to context-adaptive design: the system identifies which of 3 career scenarios the user is in (actively job-hunting, passively considering, career-lost) before surfacing relevant guidance.",
+      "outcome": "V2 PRD approved internally and entered engineering backlog.",
+      "reflection": "V1's failure taught me: AI feature design starts not from 'what can the model do' but 'what is the user's mental model in this moment.'",
+      "tools": ["Notion", "Claude AI", "FigJam", "Groq Cloud"],
+      "images": []
     }
+  },
+  {
+    "id": "coffee-map",
+    "tags": ["Gamification", "React", "Full-stack"],
+    "tagColor": "emerald",
+    "title": "Coffee Origin Map",
+    "role": "PM + Frontend Developer",
+    "summary": "A gacha-mechanic card collection game for a company coffee club—scan QR codes to pull origin cards, built full-stack from PRD to deployment.",
+    "period": "2024 Q4",
+    "demoUrl": null,
+    "caseStudyUrl": null,
+    "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuB9gdVprK5wWVNWvO6ur8aDQGKS5zZYIEoWtqZaYRwSIhjYDy7zEH9KhExOBLNowh-eqG1MKjeHrrKyCV4M1I5Se0g1RnNBfDTIZZmleP-t4gBkHUjaDdfJdBPZJqastBBu6vrYH2UL1EKZqC8SgxUdYC-i1IDgU2co1khFD3sLmDOM_iYybZIWrvi5j3L3bBE5cxB2YN1B8x1CWil4X8WOLllcROTh2x7emQH_Az37JpanOwJG9rktB1wAgt7b52O5wnPm2znqo00",
+    "featured": true,
+    "detail": {
+      "overview": "End-to-end product build: 70+ page PRD, React 18 frontend, Node.js/Express backend, Supabase database, LINE Login OAuth 2.0, QR code gacha mechanic, and admin JWT dashboard.",
+      "highlights": ["70+ page PRD", "LINE OAuth integrated", "0→1 full-stack delivery"],
+      "problem": "The company coffee club's knowledge-sharing was passive and lacked reasons for members to return.",
+      "process": "Designed a gacha mechanic to create surprise and reward—each pull reveals a coffee origin card with flavor notes and coordinates. Used LINE Login to minimize friction. Iterated PRD alongside development, reprioritizing features based on usability testing.",
+      "outcome": "Core gacha mechanic and admin dashboard shipped. 3-phase roadmap defined for gamification expansion.",
+      "reflection": "Building this as both PM and developer made me viscerally understand the cost of scope changes. My PRD writing is tighter now.",
+      "tools": ["React 18", "Node.js", "Supabase", "LINE Login API", "Vercel"],
+      "images": []
+    }
+  }
 ]

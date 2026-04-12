@@ -26,7 +26,7 @@ export default function ProjectDetail() {
         )
     }
 
-    const { tag, tagColor, title, description, demoUrl, coverImage, detail } = project
+    const { tags, tagColor, title, role, period, summary, demoUrl, caseStudyUrl, coverImage, detail } = project
 
     return (
         <main className="container mx-auto px-6 py-12 max-w-4xl">
@@ -61,28 +61,64 @@ export default function ProjectDetail() {
             {/* Header */}
             <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                 <div>
-                    <span
-                        className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide ${tagColorMap[tagColor] || tagColorMap.blue
-                            }`}
-                    >
-                        {tag}
-                    </span>
-                    <h1 className="font-display font-bold text-4xl text-slate-800 dark:text-white mt-3 mb-2">
+                    {/* Tags pills */}
+                    <div className="flex flex-wrap gap-2 mb-3">
+                        {(tags || []).map((tag) => (
+                            <span
+                                key={tag}
+                                className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide ${tagColorMap[tagColor] || tagColorMap.blue}`}
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    <h1 className="font-display font-bold text-4xl text-slate-800 dark:text-white mb-1">
                         {title}
                     </h1>
-                    <p className="text-slate-500 dark:text-slate-400 text-lg">{description}</p>
+                    {role && (
+                        <p className="text-primary text-sm font-bold uppercase tracking-wide mb-1">{role}</p>
+                    )}
+                    {period && (
+                        <p className="text-slate-400 dark:text-slate-500 text-sm mb-2">{period}</p>
+                    )}
+                    {summary && (
+                        <p className="text-slate-500 dark:text-slate-400 text-lg">{summary}</p>
+                    )}
                 </div>
-                {demoUrl && (
-                    <a
-                        href={demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="shrink-0 bg-primary text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-all hover:-translate-y-0.5"
-                    >
-                        🔗 View Demo
-                    </a>
-                )}
+                <div className="flex gap-3 shrink-0">
+                    {demoUrl && (
+                        <a
+                            href={demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-primary text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-all hover:-translate-y-0.5"
+                        >
+                            🔗 View Demo
+                        </a>
+                    )}
+                    {caseStudyUrl && (
+                        <a
+                            href={caseStudyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white dark:bg-slate-700 border border-primary text-primary font-bold py-3 px-6 rounded-full shadow-lg hover:bg-primary/5 transition-all hover:-translate-y-0.5"
+                        >
+                            📄 Case Study
+                        </a>
+                    )}
+                </div>
             </div>
+
+            {/* Highlights 3-grid */}
+            {detail.highlights && detail.highlights.length > 0 && (
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                    {detail.highlights.map((h, i) => (
+                        <div key={i} className="bg-white dark:bg-slate-800 rounded-2xl p-5 text-center shadow-sm border border-slate-100 dark:border-slate-700">
+                            <p className="font-display font-bold text-xl text-primary">{h}</p>
+                        </div>
+                    ))}
+                </div>
+            )}
 
             {/* Detail content */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -92,8 +128,16 @@ export default function ProjectDetail() {
                         <h3 className="font-display font-bold text-slate-700 dark:text-slate-200 text-sm uppercase tracking-wide mb-3">
                             My Role
                         </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm">{detail.role}</p>
+                        <p className="text-slate-600 dark:text-slate-300 text-sm">{detail.role || role}</p>
                     </div>
+                    {period && (
+                        <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-700">
+                            <h3 className="font-display font-bold text-slate-700 dark:text-slate-200 text-sm uppercase tracking-wide mb-3">
+                                Period
+                            </h3>
+                            <p className="text-slate-600 dark:text-slate-300 text-sm">{period}</p>
+                        </div>
+                    )}
                     <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-100 dark:border-slate-700">
                         <h3 className="font-display font-bold text-slate-700 dark:text-slate-200 text-sm uppercase tracking-wide mb-3">
                             Tools Used
@@ -147,6 +191,17 @@ export default function ProjectDetail() {
                             {detail.process}
                         </p>
                     </section>
+
+                    {detail.reflection && (
+                        <section>
+                            <h2 className="font-display font-bold text-xl text-slate-800 dark:text-white mb-3">
+                                💡 Reflection
+                            </h2>
+                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed italic">
+                                {detail.reflection}
+                            </p>
+                        </section>
+                    )}
 
                     {/* Placeholder for future images / wireframes */}
                     <section>

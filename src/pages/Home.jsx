@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import FlipCard from '../components/FlipCard'
+import ProjectCard from '../components/ProjectCard'
+import { useProjects } from '../hooks/useProjects'
 
 // Decorative star icon (inline SVG replacement for Material Icons)
 function Star({ className }) {
@@ -12,6 +14,9 @@ function Star({ className }) {
 }
 
 export default function Home() {
+    const { projects } = useProjects()
+    const featuredProjects = projects.filter((p) => p.featured).slice(0, 2)
+
     // "Yeah!" sticker follows mouse with trailing (lerp) effect
     const mouse = useRef({ x: 0, y: 0 })
     const pos = useRef({ x: 0, y: 0 })
@@ -41,7 +46,6 @@ export default function Home() {
             // Calculate angle from movement direction
             const dx = mouse.current.x - pos.current.x
             const dy = mouse.current.y - pos.current.y
-            const angle = Math.atan2(dy, dx) * (180 / Math.PI)
             const speed = Math.sqrt(dx * dx + dy * dy)
             // Tilt slightly in the movement direction, max ±15deg
             const tilt = Math.min(speed, 15) * (Math.sign(dx) || 1) * 0.8
@@ -94,7 +98,9 @@ export default function Home() {
                         <span className="text-primary">Cheryl Li</span>
                     </h2>
                     <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6">
-                        Crafting delightful experiences, one pixel at a time. I bridge the gap between user needs and business goals.
+                        Frontend engineer turned AI PM.<br />
+                        I write PRDs and ship prototypes—<br />
+                        sometimes in the same afternoon.
                     </p>
                     <Link
                         to="/portfolio"
@@ -116,7 +122,8 @@ export default function Home() {
                         <div className="bg-white dark:bg-slate-700 p-6 shadow-xl rounded-lg border border-slate-100 dark:border-slate-600 relative overflow-hidden">
                             <div className="absolute top-0 right-0 p-2 opacity-10 text-6xl">"</div>
                             <p className="font-display text-slate-600 dark:text-slate-300 italic leading-relaxed relative z-10">
-                                "Good products solve problems. Great products create experiences people love."
+                                "V1 failed POC. V2 shipped.<br />
+                                That&apos;s not failure — that&apos;s product thinking."
                             </p>
                             <div className="mt-4 flex justify-end">
                                 <div className="h-1 w-12 bg-slate-200 dark:bg-slate-600 rounded-full" />
@@ -128,6 +135,28 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Featured Projects section */}
+            {featuredProjects.length > 0 && (
+                <section className="mb-24 relative z-10">
+                    <div className="flex items-center justify-between mb-8">
+                        <h3 className="font-display font-bold text-2xl text-slate-800 dark:text-white">
+                            Featured Work
+                        </h3>
+                        <Link
+                            to="/portfolio"
+                            className="text-primary font-bold text-sm hover:underline"
+                        >
+                            View all projects →
+                        </Link>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {featuredProjects.map((project) => (
+                            <ProjectCard key={project.id} project={project} />
+                        ))}
+                    </div>
+                </section>
+            )}
 
             {/* "Yeah!" sticker follows cursor with trailing effect */}
             <div
