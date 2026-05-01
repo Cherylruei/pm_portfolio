@@ -6,6 +6,7 @@
 
 ## Tech Stack
 
+- node 22.22.1
 - React 19 + Vite 7
 - Tailwind CSS 4
 - react-router-dom 7
@@ -35,10 +36,10 @@ vercel dev
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `NOTION_API_KEY` | Internal Integration Secret from notion.so/my-integrations |
-| `NOTION_PROJECTS_DB_ID` | 32-character ID from your Notion database URL |
+| Variable                | Description                                                |
+| ----------------------- | ---------------------------------------------------------- |
+| `NOTION_API_KEY`        | Internal Integration Secret from notion.so/my-integrations |
+| `NOTION_PROJECTS_DB_ID` | 32-character ID from your Notion database URL              |
 
 See `.env.example` for the format.
 
