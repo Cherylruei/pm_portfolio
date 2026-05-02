@@ -44,6 +44,7 @@ export default async function handler(req, res) {
         tagColor: p.TagColor?.select?.name ?? 'blue',
         period: text('Period'),
         coverImage: url('CoverImage'),
+        heroImage: url('HeroImage'),
         demoUrl: url('DemoUrl'),
         caseStudyUrl: url('CaseStudyUrl'),
         featured: p.Featured?.checkbox ?? false,

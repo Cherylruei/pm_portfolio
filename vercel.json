@@ -1,5 +1,10 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/portfolio", "destination": "/index.html" },
+    { "source": "/portfolio/:id", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" }
+  ],
   "functions": {
     "api/*.js": {
       "memory": 128,

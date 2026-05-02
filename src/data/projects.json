@@ -9,7 +9,8 @@
     "period": "2024 Q3–Q4",
     "demoUrl": null,
     "caseStudyUrl": null,
-    "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuC-ZzBKvmQlH7lJ16R52jIdvafEx_1MyKwiB_15A4LWEmMsQOh0p1olvp3Dl0uwrvLnMDFx8T9sMR5VRxkBbfSkR_d44GLQOC_0tXPVq_HPRhTJ3SWIn4TMJeko5RRCDteBOcy2AK8q4aQGm0QVxQQajQ-ZtHaGgbxZANR0o_jupsKyPZNA0zmrMs9qNR5thGVD7qXknMZRlNxFraH8CHq3YQtb3P3ooF7vLBaujSxVvx52zCfCOJ7aAJhsvuhwS4AHrBM-WHmxAaI",
+    "coverImage": "/images/104demo.png",
+    "heroImage": "/images/104demo.png",
     "featured": true,
     "detail": {
       "overview": "Designed an AI career coaching feature for 104 (Taiwan's largest job platform, 10M+ users), going through a failed V1 POC and a successful V2 redesign.",
@@ -32,7 +33,8 @@
     "period": "2024 Q4",
     "demoUrl": null,
     "caseStudyUrl": null,
-    "coverImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuB9gdVprK5wWVNWvO6ur8aDQGKS5zZYIEoWtqZaYRwSIhjYDy7zEH9KhExOBLNowh-eqG1MKjeHrrKyCV4M1I5Se0g1RnNBfDTIZZmleP-t4gBkHUjaDdfJdBPZJqastBBu6vrYH2UL1EKZqC8SgxUdYC-i1IDgU2co1khFD3sLmDOM_iYybZIWrvi5j3L3bBE5cxB2YN1B8x1CWil4X8WOLllcROTh2x7emQH_Az37JpanOwJG9rktB1wAgt7b52O5wnPm2znqo00",
+    "coverImage": "/images/coffeemap.png",
+    "heroImage": "/images/coffeemap.png",
     "featured": true,
     "detail": {
       "overview": "End-to-end product build: 70+ page PRD, React 18 frontend, Node.js/Express backend, Supabase database, LINE Login OAuth 2.0, QR code gacha mechanic, and admin JWT dashboard.",

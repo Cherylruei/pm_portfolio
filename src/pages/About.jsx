@@ -1,41 +1,15 @@
 import { Link } from 'react-router-dom'
 import FlipCard from '../components/FlipCard'
-
-const skills = [
-    'React', 'Node.js', 'Supabase', 'Vercel',
-    'Prompt Engineering', 'LLM API', 'AI Agent',
-    'PRD', 'OKR', 'User Research', 'Competitive Analysis',
-    'User Interviews', 'Persona', 'User Journey',
-]
-
-const timeline = [
-    {
-        period: '2023 Aug – Present',
-        role: 'Frontend Engineer',
-        company: '雄獅資訊',
-        note: 'React development, building internal tools and consumer-facing features.',
-    },
-    {
-        period: '2021 – 2023',
-        role: 'PM',
-        company: '歐中貿易（捷克）',
-        note: '50+ projects, led 10-person team to trade shows in China, expanded Shopify revenue 2×.',
-    },
-    {
-        period: '2019 – 2021',
-        role: 'PM',
-        company: '巨騰蘇州',
-        note: 'Collaborated with Microsoft (Surface) and Facebook (Portal). Resolved enterprise escalations in 2 weeks, saving 50% cost.',
-    },
-    {
-        period: '2017 – 2019',
-        role: 'PMC Supervisor',
-        company: 'Chicony（捷克）',
-        note: 'Managed 40% market share region across European accounts.',
-    },
-]
+import { useSiteConfig } from '../hooks/useSiteConfig'
 
 export default function About() {
+    const config = useSiteConfig()
+    const skills = config.about_skills.split(',').map((s) => s.trim()).filter(Boolean)
+    const timeline = (() => {
+        try { return JSON.parse(config.about_timeline) }
+        catch { return [] }
+    })()
+
     return (
         <main className="container mx-auto px-6 py-12 relative">
             {/* Dark mode toggle */}
@@ -56,7 +30,7 @@ export default function About() {
                         <span className="text-primary">Me</span>
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
-                        Builder PM. Frontend engineer. Former cross-national project manager.
+                        {config.about_hero_subtitle}
                     </p>
                 </div>
                 <div className="lg:col-span-4 flex justify-center order-1 lg:order-2">
@@ -71,17 +45,17 @@ export default function About() {
                 <div className="lg:col-span-2 space-y-6">
                     <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-lg border border-transparent">
                         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Frontend engineer with 2 years of hands-on React experience, now building AI products as a PM. I write code and ship PRDs—my engineering background means fewer spec gaps and faster iteration with dev teams.
+                            {config.about_bio_1}
                         </p>
                     </div>
                     <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-lg border border-transparent">
                         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Before pivoting to tech, I spent 5+ years as a cross-national PM—managing 50+ projects at a Czech-China trade company, leading a 10-person team to trade shows in China, and resolving enterprise client escalations (Microsoft Surface, Facebook Portal) within 2 weeks.
+                            {config.about_bio_2}
                         </p>
                     </div>
                     <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-lg border border-transparent">
                         <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Now I&apos;m building AI-native products: an LLM career coach for 104 (Taiwan&apos;s largest job platform) and a gamified coffee origin card game with LINE Login and a Gacha mechanic. Both built with real PRDs, real users, and real deployments.
+                            {config.about_bio_3}
                         </p>
                     </div>
                 </div>

@@ -52,6 +52,7 @@ export default function ProjectDetail() {
     demoUrl,
     caseStudyUrl,
     coverImage,
+    heroImage,
     detail = {},
   } = project;
 
@@ -81,7 +82,7 @@ export default function ProjectDetail() {
       {/* Hero image */}
       <div className='rounded-3xl overflow-hidden h-72 mb-8 shadow-xl'>
         <img
-          src={coverImage}
+          src={heroImage || coverImage}
           alt={title}
           className='w-full h-full object-cover'
         />
